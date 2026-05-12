@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import 'flag-icons/css/flag-icons.min.css'
 
+const API_URL = import.meta.env.VITE_API_URL || ""
+
 const codigos = {
   "México": "mx",
   "África do Sul": "za",
@@ -63,16 +65,16 @@ function App() {
 
   const carregarDados = async () => {
     const [g, s, j] = await Promise.all([
-      fetch("/api/grupos").then(r => r.json()),
-      fetch("/api/selecoes").then(r => r.json()),
-      fetch("/api/jogos").then(r => r.json()),
+      fetch(`${API_URL}/api/grupos`).then(r => r.json()),
+      fetch(`${API_URL}/api/selecoes`).then(r => r.json()),
+      fetch(`${API_URL}/api/jogos`).then(r => r.json()),
     ])
     setGrupos(g)
     setSelecoes(s)
     setJogos(j)
     const classifs = {}
     for (const grupo of g) {
-      const c = await fetch(`/api/grupos/${grupo.id}/classificacao`).then(r => r.json())
+      const c = await fetch(`${API_URL}/api/grupos/${grupo.id}/classificacao`).then(r => r.json())
       classifs[grupo.nome] = c
     }
     setClassificacoes(classifs)
@@ -114,27 +116,27 @@ function App() {
   }
 
   const simular = async (jogoId) => {
-    await fetch(`/api/jogos/simular/${jogoId}`, { method: "POST" })
+    await fetch(`${API_URL}/api/jogos/simular/${jogoId}`, { method: "POST" })
     carregarDados()
   }
 
   const simularRodadaCompleta = async (rodada) => {
     for (const jogo of jogosDaRodada(rodada).filter(j => !j.encerrado)) {
-      await fetch(`/api/jogos/simular/${jogo.id}`, { method: "POST" })
+      await fetch(`${API_URL}/api/jogos/simular/${jogo.id}`, { method: "POST" })
     }
     carregarDados()
   }
 
   const simularRodadaDoGrupo = async (grupoNome, rodada) => {
     for (const jogo of jogosDo(grupoNome, rodada).filter(j => !j.encerrado)) {
-      await fetch(`/api/jogos/simular/${jogo.id}`, { method: "POST" })
+      await fetch(`${API_URL}/api/jogos/simular/${jogo.id}`, { method: "POST" })
     }
     carregarDados()
   }
 
   const simularFase = async (fase) => {
     for (const jogo of jogosDaFase(fase).filter(j => !j.encerrado)) {
-      await fetch(`/api/jogos/simular/${jogo.id}`, { method: "POST" })
+      await fetch(`${API_URL}/api/jogos/simular/${jogo.id}`, { method: "POST" })
     }
     carregarDados()
   }
@@ -152,7 +154,7 @@ function App() {
     const vencedor = getVencedor(jogo)
     const casaVenceu = vencedor === jogo.selecaoCasa.nome
     const visitanteVenceu = vencedor === jogo.selecaoVisitante.nome
-  
+
     return (
       <div className="bg-gray-700/50 rounded-lg p-2 flex items-center gap-2 text-sm">
         <div className={`flex items-center gap-1 justify-end flex-1 min-w-0 ${casaVenceu ? "text-green-400 font-bold" : ""}`}>
@@ -161,18 +163,15 @@ function App() {
           <span className="truncate text-right">{jogo.selecaoCasa.nome}</span>
           <Flag nome={jogo.selecaoCasa.nome} />
         </div>
-  
         <span className="text-yellow-400 font-bold whitespace-nowrap flex-shrink-0">
           {jogo.encerrado ? `${jogo.golsCasa} x ${jogo.golsVisitante}` : "vs"}
         </span>
-  
         <div className={`flex items-center gap-1 flex-1 min-w-0 ${visitanteVenceu ? "text-green-400 font-bold" : ""}`}>
           <Flag nome={jogo.selecaoVisitante.nome} />
           <span className="truncate">{jogo.selecaoVisitante.nome}</span>
           {jogo.temPenaltis && visitanteVenceu &&
             <span className="text-xs text-green-400 whitespace-nowrap flex-shrink-0">(pen)</span>}
         </div>
-  
         <div className="flex-shrink-0">
           {!jogo.encerrado ? (
             <button
@@ -242,8 +241,6 @@ function App() {
 
   return (
     <div style={{ height: "100vh", overflow: "hidden" }} className="bg-gray-950 text-white p-6 flex flex-col">
-
-      {/* Header */}
       <div className="flex items-center justify-between mb-4 border-b border-gray-700 pb-4 flex-shrink-0">
         <h1 className="text-2xl font-bold text-yellow-400">🏆 Copa do Mundo 2026</h1>
         <div className="flex gap-3">
@@ -269,7 +266,7 @@ function App() {
         <button
           onClick={async () => {
             if (confirm("Tem certeza que deseja resetar toda a simulação?")) {
-              await fetch("/api/admin/reset", { method: "POST" })
+              await fetch(`${API_URL}/api/admin/reset`, { method: "POST" })
               alert("Simulação resetada com sucesso!")
               window.location.reload()
             }
@@ -280,10 +277,8 @@ function App() {
         </button>
       </div>
 
-      {/* Conteúdo */}
       <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
 
-        {/* ABA RODADAS */}
         {aba === "rodadas" && (
           <div>
             <div className="flex gap-3 mb-4">
@@ -336,7 +331,6 @@ function App() {
           </div>
         )}
 
-        {/* ABA GRUPOS */}
         {aba === "grupos" && (
           <div>
             <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 mb-4">
@@ -407,7 +401,6 @@ function App() {
           </div>
         )}
 
-        {/* ABA CLASSIFICAÇÃO */}
         {aba === "classificacao" && (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pb-4">
             {gruposOrdenados.map(grupo => (
@@ -425,7 +418,6 @@ function App() {
           </div>
         )}
 
-        {/* ABA MATA-MATA */}
         {aba === "matamata" && (
           <div className="space-y-4 pb-4">
             {jogosDaFase("DEZESSEIS_AVOS").length === 0 && (
