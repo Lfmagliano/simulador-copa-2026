@@ -45,7 +45,7 @@ const codigos = {
   "Áustria": "at",
   "Jordânia": "jo",
   "Portugal": "pt",
-  "RD Congo": "cd",
+  "Congo RD": "cd",
   "Uzbequistão": "uz",
   "Colômbia": "co",
   "Inglaterra": "gb-eng",

@@ -46,65 +46,65 @@ public class DataLoader implements CommandLineRunner {
 
             List<Selecao> selecoes = selecaoRepository.saveAll(List.of(
                 // Grupo A
-                Selecao.builder().nome("México").continente(Continente.AMERICA_DO_NORTE).grupo(A).forca(79).build(),
-                Selecao.builder().nome("África do Sul").continente(Continente.AFRICA).grupo(A).forca(52).build(),
-                Selecao.builder().nome("Coreia do Sul").continente(Continente.ASIA).grupo(A).forca(68).build(),
-                Selecao.builder().nome("República Tcheca").continente(Continente.EUROPA).grupo(A).forca(62).build(),
+                Selecao.builder().nome("México").continente(Continente.AMERICA_DO_NORTE).grupo(A).forca(91).build(),
+                Selecao.builder().nome("África do Sul").continente(Continente.AFRICA).grupo(A).forca(64).build(),
+                Selecao.builder().nome("Coreia do Sul").continente(Continente.ASIA).grupo(A).forca(85).build(),
+                Selecao.builder().nome("República Tcheca").continente(Continente.EUROPA).grupo(A).forca(75).build(),
                 // Grupo B
-                Selecao.builder().nome("Canadá").continente(Continente.AMERICA_DO_NORTE).grupo(B).forca(61).build(),
-                Selecao.builder().nome("Bósnia").continente(Continente.EUROPA).grupo(B).forca(47).build(),
-                Selecao.builder().nome("Qatar").continente(Continente.ASIA).grupo(B).forca(55).build(),
-                Selecao.builder().nome("Suíça").continente(Continente.EUROPA).grupo(B).forca(71).build(),
+                Selecao.builder().nome("Canadá").continente(Continente.AMERICA_DO_NORTE).grupo(B).forca(82).build(),
+                Selecao.builder().nome("Bósnia").continente(Continente.EUROPA).grupo(B).forca(61).build(),
+                Selecao.builder().nome("Qatar").continente(Continente.ASIA).grupo(B).forca(67).build(),
+                Selecao.builder().nome("Suíça").continente(Continente.EUROPA).grupo(B).forca(88).build(),
                 // Grupo C
-                Selecao.builder().nome("Brasil").continente(Continente.AMERICA_DO_SUL).grupo(C).forca(88).build(),
-                Selecao.builder().nome("Marrocos").continente(Continente.AFRICA).grupo(C).forca(87).build(),
-                Selecao.builder().nome("Haiti").continente(Continente.AMERICA_DO_NORTE).grupo(C).forca(43).build(),
-                Selecao.builder().nome("Escócia").continente(Continente.EUROPA).grupo(C).forca(60).build(),
+                Selecao.builder().nome("Brasil").continente(Continente.AMERICA_DO_SUL).grupo(C).forca(96).build(),
+                Selecao.builder().nome("Marrocos").continente(Continente.AFRICA).grupo(C).forca(95).build(),
+                Selecao.builder().nome("Haiti").continente(Continente.AMERICA_DO_NORTE).grupo(C).forca(50).build(),
+                Selecao.builder().nome("Escócia").continente(Continente.EUROPA).grupo(C).forca(74).build(),
                 // Grupo D
-                Selecao.builder().nome("Estados Unidos").continente(Continente.AMERICA_DO_NORTE).grupo(D).forca(77).build(),
-                Selecao.builder().nome("Paraguai").continente(Continente.AMERICA_DO_SUL).grupo(D).forca(63).build(),
-                Selecao.builder().nome("Austrália").continente(Continente.OCEANIA).grupo(D).forca(66).build(),
-                Selecao.builder().nome("Turquia").continente(Continente.EUROPA).grupo(D).forca(69).build(),
+                Selecao.builder().nome("Estados Unidos").continente(Continente.AMERICA_DO_NORTE).grupo(D).forca(90).build(),
+                Selecao.builder().nome("Paraguai").continente(Continente.AMERICA_DO_SUL).grupo(D).forca(76).build(),
+                Selecao.builder().nome("Austrália").continente(Continente.OCEANIA).grupo(D).forca(83).build(),
+                Selecao.builder().nome("Turquia").continente(Continente.EUROPA).grupo(D).forca(86).build(),
                 // Grupo E
-                Selecao.builder().nome("Alemanha").continente(Continente.EUROPA).grupo(E).forca(85).build(),
-                Selecao.builder().nome("Curaçao").continente(Continente.AMERICA_DO_NORTE).grupo(E).forca(44).build(),
-                Selecao.builder().nome("Costa do Marfim").continente(Continente.AFRICA).grupo(E).forca(64).build(),
-                Selecao.builder().nome("Equador").continente(Continente.AMERICA_DO_SUL).grupo(E).forca(70).build(),
+                Selecao.builder().nome("Alemanha").continente(Continente.EUROPA).grupo(E).forca(94).build(),
+                Selecao.builder().nome("Curaçao").continente(Continente.AMERICA_DO_NORTE).grupo(E).forca(50).build(),
+                Selecao.builder().nome("Costa do Marfim").continente(Continente.AFRICA).grupo(E).forca(79).build(),
+                Selecao.builder().nome("Equador").continente(Continente.AMERICA_DO_SUL).grupo(E).forca(86).build(),
                 // Grupo F
-                Selecao.builder().nome("Holanda").continente(Continente.EUROPA).grupo(F).forca(90).build(),
-                Selecao.builder().nome("Japão").continente(Continente.ASIA).grupo(F).forca(80).build(),
-                Selecao.builder().nome("Suécia").continente(Continente.EUROPA).grupo(F).forca(57).build(),
-                Selecao.builder().nome("Tunísia").continente(Continente.AFRICA).grupo(F).forca(56).build(),
+                Selecao.builder().nome("Holanda").continente(Continente.EUROPA).grupo(F).forca(95).build(),
+                Selecao.builder().nome("Japão").continente(Continente.ASIA).grupo(F).forca(89).build(),
+                Selecao.builder().nome("Suécia").continente(Continente.EUROPA).grupo(F).forca(77).build(),
+                Selecao.builder().nome("Tunísia").continente(Continente.AFRICA).grupo(F).forca(73).build(),
                 // Grupo G
-                Selecao.builder().nome("Bélgica").continente(Continente.EUROPA).grupo(G).forca(86).build(),
-                Selecao.builder().nome("Egito").continente(Continente.AFRICA).grupo(G).forca(65).build(),
-                Selecao.builder().nome("Irã").continente(Continente.ASIA).grupo(G).forca(72).build(),
-                Selecao.builder().nome("Nova Zelândia").continente(Continente.OCEANIA).grupo(G).forca(45).build(),
+                Selecao.builder().nome("Bélgica").continente(Continente.EUROPA).grupo(G).forca(94).build(),
+                Selecao.builder().nome("Egito").continente(Continente.AFRICA).grupo(G).forca(82).build(),
+                Selecao.builder().nome("Irã").continente(Continente.ASIA).grupo(G).forca(87).build(),
+                Selecao.builder().nome("Nova Zelândia").continente(Continente.OCEANIA).grupo(G).forca(49).build(),
                 // Grupo H
                 Selecao.builder().nome("Espanha").continente(Continente.EUROPA).grupo(H).forca(98).build(),
-                Selecao.builder().nome("Cabo Verde").continente(Continente.AFRICA).grupo(H).forca(49).build(),
-                Selecao.builder().nome("Arábia Saudita").continente(Continente.ASIA).grupo(H).forca(51).build(),
-                Selecao.builder().nome("Uruguai").continente(Continente.AMERICA_DO_SUL).grupo(H).forca(78).build(),
+                Selecao.builder().nome("Cabo Verde").continente(Continente.AFRICA).grupo(H).forca(58).build(),
+                Selecao.builder().nome("Arábia Saudita").continente(Continente.ASIA).grupo(H).forca(63).build(),
+                Selecao.builder().nome("Uruguai").continente(Continente.AMERICA_DO_SUL).grupo(H).forca(89).build(),
                 // Grupo I
                 Selecao.builder().nome("França").continente(Continente.EUROPA).grupo(I).forca(99).build(),
-                Selecao.builder().nome("Senegal").continente(Continente.AFRICA).grupo(I).forca(76).build(),
-                Selecao.builder().nome("Iraque").continente(Continente.ASIA).grupo(I).forca(53).build(),
-                Selecao.builder().nome("Noruega").continente(Continente.EUROPA).grupo(I).forca(62).build(),
+                Selecao.builder().nome("Senegal").continente(Continente.AFRICA).grupo(I).forca(91).build(),
+                Selecao.builder().nome("Iraque").continente(Continente.ASIA).grupo(I).forca(65).build(),
+                Selecao.builder().nome("Noruega").continente(Continente.EUROPA).grupo(I).forca(81).build(),
                 // Grupo J
-                Selecao.builder().nome("Argentina").continente(Continente.AMERICA_DO_SUL).grupo(J).forca(97).build(),
-                Selecao.builder().nome("Argélia").continente(Continente.AFRICA).grupo(J).forca(67).build(),
-                Selecao.builder().nome("Áustria").continente(Continente.EUROPA).grupo(J).forca(71).build(),
-                Selecao.builder().nome("Jordânia").continente(Continente.ASIA).grupo(J).forca(46).build(),
+                Selecao.builder().nome("Argentina").continente(Continente.AMERICA_DO_SUL).grupo(J).forca(98).build(),
+                Selecao.builder().nome("Argélia").continente(Continente.AFRICA).grupo(J).forca(83).build(),
+                Selecao.builder().nome("Áustria").continente(Continente.EUROPA).grupo(J).forca(85).build(),
+                Selecao.builder().nome("Jordânia").continente(Continente.ASIA).grupo(J).forca(62).build(),
                 // Grupo K
-                Selecao.builder().nome("Portugal").continente(Continente.EUROPA).grupo(K).forca(93).build(),
-                Selecao.builder().nome("República do Congo").continente(Continente.AFRICA).grupo(K).forca(58).build(),
-                Selecao.builder().nome("Uzbequistão").continente(Continente.ASIA).grupo(K).forca(50).build(),
-                Selecao.builder().nome("Colômbia").continente(Continente.AMERICA_DO_SUL).grupo(K).forca(81).build(),
+                Selecao.builder().nome("Portugal").continente(Continente.EUROPA).grupo(K).forca(97).build(),
+                Selecao.builder().nome("Congo RD").continente(Continente.AFRICA).grupo(K).forca(72).build(),
+                Selecao.builder().nome("Uzbequistão").continente(Continente.ASIA).grupo(K).forca(70).build(),
+                Selecao.builder().nome("Colômbia").continente(Continente.AMERICA_DO_SUL).grupo(K).forca(92).build(),
                 // Grupo L
-                Selecao.builder().nome("Inglaterra").continente(Continente.EUROPA).grupo(L).forca(95).build(),
-                Selecao.builder().nome("Croácia").continente(Continente.EUROPA).grupo(L).forca(83).build(),
-                Selecao.builder().nome("Gana").continente(Continente.AFRICA).grupo(L).forca(48).build(),
-                Selecao.builder().nome("Panamá").continente(Continente.AMERICA_DO_NORTE).grupo(L).forca(61).build()
+                Selecao.builder().nome("Inglaterra").continente(Continente.EUROPA).grupo(L).forca(97).build(),
+                Selecao.builder().nome("Croácia").continente(Continente.EUROPA).grupo(L).forca(93).build(),
+                Selecao.builder().nome("Gana").continente(Continente.AFRICA).grupo(L).forca(55).build(),
+                Selecao.builder().nome("Panamá").continente(Continente.AMERICA_DO_NORTE).grupo(L).forca(80).build()
             ));
 
             List<ClassificacaoGrupo> classificacoes = new ArrayList<>();
@@ -252,15 +252,15 @@ public class DataLoader implements CommandLineRunner {
             jogos.add(Jogo.builder().selecaoCasa(sgJ.get(1)).selecaoVisitante(sgJ.get(2)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(3).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
 
             // ===== GRUPO K =====
-            // sg: 0=Portugal, 1=RD Congo, 2=Uzbequistão, 3=Colômbia
+            // sg: 0=Portugal, 1=Congo RD, 2=Uzbequistão, 3=Colômbia
             List<Selecao> sgK = selecoes.stream().filter(s -> s.getGrupo().getId().equals(K.getId())).toList();
-            // Rodada 1: Portugal x RD Congo | Uzbequistão x Colômbia
+            // Rodada 1: Portugal x Congo RD | Uzbequistão x Colômbia
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(0)).selecaoVisitante(sgK.get(1)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(1).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(2)).selecaoVisitante(sgK.get(3)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(1).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
-            // Rodada 2: Portugal x Uzbequistão | Colômbia x RD Congo
+            // Rodada 2: Portugal x Uzbequistão | Colômbia x Congo RD
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(0)).selecaoVisitante(sgK.get(2)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(2).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(3)).selecaoVisitante(sgK.get(1)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(2).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
-            // Rodada 3: Colômbia x Portugal | RD Congo x Uzbequistão
+            // Rodada 3: Colômbia x Portugal | Congo RD x Uzbequistão
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(3)).selecaoVisitante(sgK.get(0)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(3).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
             jogos.add(Jogo.builder().selecaoCasa(sgK.get(1)).selecaoVisitante(sgK.get(2)).golsCasa(0).golsVisitante(0).fase(Fase.GRUPOS).rodada(3).encerrado(false).temProrrogacao(false).temPenaltis(false).build());
 
