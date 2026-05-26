@@ -20,7 +20,7 @@ public class Grupo {
     @Column(nullable = false, unique = true)
     private String nome;
 
-    @JsonIgnore                                        // ← adicionado aqui
+    @JsonIgnore                                        
     @OneToMany(mappedBy = "grupo", fetch = FetchType.LAZY)
     private List<Selecao> selecoes;
 

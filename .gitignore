@@ -1,9 +1,7 @@
 node_modules/
-*.exe
-*.winmd
 package.json
 package-lock.json
 docs/
 DOCUMENTACAO.md
 ranking.txt
-doc.txt
+

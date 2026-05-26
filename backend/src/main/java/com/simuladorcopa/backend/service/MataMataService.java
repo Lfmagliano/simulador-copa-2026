@@ -73,24 +73,24 @@ public class MataMataService {
         List<Jogo> jogos = new ArrayList<>();
 
         // 8 confrontos: 1º vs 2º de grupos diferentes
-        jogos.add(criarJogo(primeiros.get(0),  segundos.get(11), Fase.DEZESSEIS_AVOS)); // 1ºA vs 2ºL
-        jogos.add(criarJogo(primeiros.get(1),  segundos.get(10), Fase.DEZESSEIS_AVOS)); // 1ºB vs 2ºK
-        jogos.add(criarJogo(primeiros.get(2),  segundos.get(9),  Fase.DEZESSEIS_AVOS)); // 1ºC vs 2ºJ
-        jogos.add(criarJogo(primeiros.get(3),  segundos.get(8),  Fase.DEZESSEIS_AVOS)); // 1ºD vs 2ºI
-        jogos.add(criarJogo(primeiros.get(4),  segundos.get(7),  Fase.DEZESSEIS_AVOS)); // 1ºE vs 2ºH
-        jogos.add(criarJogo(primeiros.get(5),  segundos.get(6),  Fase.DEZESSEIS_AVOS)); // 1ºF vs 2ºG
-        jogos.add(criarJogo(primeiros.get(6),  segundos.get(5),  Fase.DEZESSEIS_AVOS)); // 1ºG vs 2ºF
-        jogos.add(criarJogo(primeiros.get(7),  segundos.get(4),  Fase.DEZESSEIS_AVOS)); // 1ºH vs 2ºE
+        jogos.add(criarJogo(primeiros.get(0),  segundos.get(11), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(1),  segundos.get(10), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(2),  segundos.get(9),  Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(3),  segundos.get(8),  Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(4),  segundos.get(7),  Fase.DEZESSEIS_AVOS));
+        jogos.add(criarJogo(primeiros.get(5),  segundos.get(6),  Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(6),  segundos.get(5),  Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(7),  segundos.get(4),  Fase.DEZESSEIS_AVOS)); 
 
         // 8 confrontos: 1º dos grupos I-L + 2º dos grupos A-D vs melhores terceiros
-        jogos.add(criarJogo(primeiros.get(8),  melhoresTerceiros.get(0), Fase.DEZESSEIS_AVOS)); // 1ºI vs 3º
-        jogos.add(criarJogo(primeiros.get(9),  melhoresTerceiros.get(1), Fase.DEZESSEIS_AVOS)); // 1ºJ vs 3º
-        jogos.add(criarJogo(primeiros.get(10), melhoresTerceiros.get(2), Fase.DEZESSEIS_AVOS)); // 1ºK vs 3º
-        jogos.add(criarJogo(primeiros.get(11), melhoresTerceiros.get(3), Fase.DEZESSEIS_AVOS)); // 1ºL vs 3º
-        jogos.add(criarJogo(segundos.get(0),   melhoresTerceiros.get(4), Fase.DEZESSEIS_AVOS)); // 2ºA vs 3º
-        jogos.add(criarJogo(segundos.get(1),   melhoresTerceiros.get(5), Fase.DEZESSEIS_AVOS)); // 2ºB vs 3º
-        jogos.add(criarJogo(segundos.get(2),   melhoresTerceiros.get(6), Fase.DEZESSEIS_AVOS)); // 2ºC vs 3º
-        jogos.add(criarJogo(segundos.get(3),   melhoresTerceiros.get(7), Fase.DEZESSEIS_AVOS)); // 2ºD vs 3º
+        jogos.add(criarJogo(primeiros.get(8),  melhoresTerceiros.get(0), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(9),  melhoresTerceiros.get(1), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(10), melhoresTerceiros.get(2), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(primeiros.get(11), melhoresTerceiros.get(3), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(segundos.get(0),   melhoresTerceiros.get(4), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(segundos.get(1),   melhoresTerceiros.get(5), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(segundos.get(2),   melhoresTerceiros.get(6), Fase.DEZESSEIS_AVOS)); 
+        jogos.add(criarJogo(segundos.get(3),   melhoresTerceiros.get(7), Fase.DEZESSEIS_AVOS)); 
 
         jogoRepository.saveAll(jogos);
         System.out.println("Rodada de 32 gerada com " + jogos.size() + " jogos!");

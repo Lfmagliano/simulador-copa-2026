@@ -34,7 +34,7 @@ public class JogoService {
         int golsCasa = gerarGols(forcaCasa, forcaVisitante);
         int golsVisitante = gerarGols(forcaVisitante, forcaCasa);
 
-        // No mata-mata não pode ter empate — vai para prorrogação/pênaltis
+        // No mata-mata não pode ter empate. Vai para disputa de pênaltis
         if (jogo.getFase() != Fase.GRUPOS && golsCasa == golsVisitante) {
             int[] penaltis = simularPenaltis(forcaCasa, forcaVisitante);
             jogo.setTemProrrogacao(true);
@@ -100,7 +100,7 @@ public class JogoService {
             if (random.nextDouble() < chanceVisitante) golsVisitante++;
         }
 
-        // Morte súbita se empatado
+        // Morte súbita em caso de empate nas primeiras 5 cobranças
         while (golsCasa == golsVisitante) {
             double chanceCasa = 0.7 + (forcaCasa - forcaVisitante) / 1000.0;
             double chanceVisitante = 0.7 + (forcaVisitante - forcaCasa) / 1000.0;
@@ -112,8 +112,6 @@ public class JogoService {
     }
 
     private void atualizarClassificacaoMataMata(Selecao vencedor, Selecao perdedor) {
-        // No mata-mata só registramos quem venceu — sem pontos
-        // Apenas para controle interno se necessário
     }
 
     private Jogo registrarResultado(Jogo jogo, int golsCasa, int golsVisitante) {
