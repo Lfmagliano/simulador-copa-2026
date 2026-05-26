@@ -62,6 +62,7 @@ function App() {
   const [aba, setAba] = useState("rodadas")
   const [rodadaAtiva, setRodadaAtiva] = useState(1)
   const [grupoAtivo, setGrupoAtivo] = useState(null)
+  const [popupCampeaoFechado, setPopupCampeaoFechado] = useState(false)
 
   const carregarDados = async () => {
     const [g, s, j] = await Promise.all([
@@ -229,6 +230,10 @@ function App() {
       </table>
     )
   }
+
+  const jogoFinal = jogos.find(j => j.fase === "FINAL")
+  const campeao = jogoFinal && jogoFinal.encerrado ? getVencedor(jogoFinal) : null
+  const mostrarPopupCampeao = campeao && !popupCampeaoFechado
 
   const fases = [
     { key: "DEZESSEIS_AVOS", label: "Rodada de 32" },
@@ -453,6 +458,30 @@ function App() {
         )}
 
       </div>
+
+      {mostrarPopupCampeao && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-gray-800 rounded-2xl p-8 border-2 border-yellow-400 shadow-2xl text-center max-w-md mx-4">
+            <div className="text-6xl mb-3">🏆</div>
+            <p className="text-yellow-400 text-sm font-bold tracking-wider mb-3">
+              CAMPEÃO DA COPA DO MUNDO 2026
+            </p>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span
+                className={`fi fi-${codigos[campeao] || "un"}`}
+                style={{ width: 40, height: 30, display: "inline-block" }}
+              />
+              <h2 className="text-3xl font-bold text-white">{campeao}</h2>
+            </div>
+            <button
+              onClick={() => setPopupCampeaoFechado(true)}
+              className="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-all"
+            >
+              Continuar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
